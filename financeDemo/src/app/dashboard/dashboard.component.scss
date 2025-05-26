@@ -1,0 +1,12 @@
+app-asset-allocation,
+app-performance-metrics {
+  display: block;
+  height: 100%;
+}
+.card-equal-height {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  min-height: 320px;
+}

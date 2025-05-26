@@ -1,0 +1,108 @@
+<div class="container my-4">
+  <div class="card shadow p-4 mx-auto" style="max-width: 600px">
+    <h5 class="mb-3">Add New Investment</h5>
+
+    <form [formGroup]="investmentForm" (ngSubmit)="onSubmit()">
+      <div class="mb-3">
+        <label class="form-label">Asset Type *</label>
+        <select formControlName="assetType" class="form-select" required>
+          <option value="">Select asset type</option>
+          <option *ngFor="let type of assetTypes" [value]="type">
+            {{ type }}
+          </option>
+        </select>
+        <div
+          *ngIf="submitted && fcontrols['assetType'].errors"
+          class="text-danger"
+        >
+          Asset type is required
+        </div>
+      </div>
+
+      <div class="mb-3">
+        <label class="form-label">Asset Name *</label>
+        <input type="text" class="form-control" formControlName="assetName" />
+        <div
+          *ngIf="submitted && fcontrols['assetName'].errors"
+          class="text-danger"
+        >
+          Asset name is required
+        </div>
+      </div>
+
+      <div class="mb-3">
+        <label class="form-label">Quantity *</label>
+        <input type="number" class="form-control" formControlName="quantity" />
+        <div
+          *ngIf="submitted && fcontrols['quantity'].errors"
+          class="text-danger"
+        >
+          Quantity is required and must be positive
+        </div>
+      </div>
+
+      <div class="mb-3">
+        <label class="form-label">Purchase Price *</label>
+        <input
+          type="number"
+          class="form-control"
+          formControlName="purchasePrice"
+        />
+        <div
+          *ngIf="submitted && fcontrols['purchasePrice'].errors"
+          class="text-danger"
+        >
+          Purchase price is required and must be positive
+        </div>
+      </div>
+
+      <div class="mb-3">
+        <label class="form-label">Purchase Date *</label>
+        <input
+          type="date"
+          class="form-control"
+          formControlName="purchaseDate"
+        />
+        <div
+          *ngIf="submitted && fcontrols['purchaseDate'].errors"
+          class="text-danger"
+        >
+          Date is required
+        </div>
+      </div>
+
+      <div class="mb-3">
+        <label class="form-label">Notes</label>
+        <textarea
+          rows="3"
+          class="form-control"
+          formControlName="notes"
+        ></textarea>
+      </div>
+
+      <button type="submit" class="btn btn-primary w-100">Submit</button>
+    </form>
+
+    <!-- <div *ngIf="showReview" class="mt-4">
+      <h6>Review Investment</h6>
+      <ul class="list-group">
+        <li class="list-group-item">
+          Asset Type: {{ investmentForm.value.assetType }}
+        </li>
+        <li class="list-group-item">
+          Asset Name: {{ investmentForm.value.assetName }}
+        </li>
+        <li class="list-group-item">
+          Quantity: {{ investmentForm.value.quantity }}
+        </li>
+        <li class="list-group-item">
+          Purchase Price: ₹{{ investmentForm.value.purchasePrice }}
+        </li>
+        <li class="list-group-item">
+          Purchase Date: {{ investmentForm.value.purchaseDate }}
+        </li>
+        <li class="list-group-item">Notes: {{ investmentForm.value.notes }}</li>
+      </ul>
+    </div> -->
+  </div>
+</div>

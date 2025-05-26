@@ -1,0 +1,41 @@
+<div class="container mt-4">
+  <div class="row text-center mb-4">
+    <div class="col-12 col-sm-6 col-lg-4 mb-3">
+      <div class="card p-3 shadow-sm">
+        <h6 class="text-muted">Total Value</h6>
+        <h3 class="fw-bold">{{ totalValue | currency }}</h3>
+        <p class="text-success mb-0">+12.50%</p>
+      </div>
+    </div>
+    <div class="col-12 col-sm-6 col-lg-4 mb-3">
+      <div class="card p-3 shadow-sm">
+        <h6 class="text-muted">Today's Gain/Loss</h6>
+        <h3 class="fw-bold text-success">{{ totalgain | currency }}</h3>
+        <p class="text-success mb-0">+1.01%</p>
+      </div>
+    </div>
+    <div class="col-12 col-sm-6 col-lg-4 mb-3">
+      <div class="card p-3 shadow-sm">
+        <h6 class="text-muted">Annual Return</h6>
+        <h3 class="fw-bold text-success">{{ annualReturn | currency }}</h3>
+        <p class="text-success mb-0">+13.64%</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="container mt-4">
+  <div class="row">
+    <div class="col-12 col-lg-6 mb-4">
+      <app-asset-allocation
+        [assetChartData]="assetChartData"
+      ></app-asset-allocation>
+    </div>
+
+    <div class="col-12 col-lg-6 mb-4">
+      <app-performance-metrics
+        [performanceChartData]="performanceChartData"
+      ></app-performance-metrics>
+    </div>
+  </div>
+</div>

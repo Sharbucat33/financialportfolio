@@ -1,0 +1,12 @@
+<div class="card card-sm p-3">
+  <h5>Performance Metrics</h5>
+
+  <canvas
+    *ngIf="performanceChartData"
+    baseChart
+    [data]="performanceChartData"
+    chartType="line"
+    [options]="chartOptions"
+  >
+  </canvas>
+</div>
